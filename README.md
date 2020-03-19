@@ -1,6 +1,8 @@
 
 相比 Mathematica, GeoGebra 在教师中受众更广，（免费，开源）
 
+本文提供 GGB2MMA 的代码实现，由于 GGB 的函数重载现象很普遍，所以每个不同的功能都用单独写一行来区分
+
 ## 1.2 函数
 <center>
 
@@ -14,10 +16,10 @@
 |   6   |  asin(x) 或 arcsin(x)  |                                Arc sine，反正弦函数                                |                   ArcSin[x]                   |
 |   7   | asind(x) 或 arcsind(x) |                       Arc sine，反正弦 (sin-1)（以度为单位）                       |               ArcSin[x Degree]                |
 |   8   | asinh(x) 或 arcsinh(x) |                        Antihyperbolic sine，反双曲正弦函数                         |                  ArcSinh[x]                   |
-|   9   |  atan(x) 或 arctan(x)  |                 Arc tangent，反正切函数（返回值在-π/2 与π/2 之间）                 |                   ArcTan[x]                   |
+|   9   |  atan(x) 或 arctan(x)  |                Arc tangent，反正切函数（返回值在 -π/2 与π/2 之间）                 |                   ArcTan[x]                   |
 |  10   | atand(x) 或 arctand(x) |                     Arc tangent，反正切 (tan-1)（以度为单位）                      |               ArcTan[x Degree]                |
 |  11   | atanh(x) 或 arctanh(x) |                       Antihyperbolic tangent，反双曲正切函数                       |                  ArcTanh[x]                   |
-|  12   |       atan2(y,x)       |                    Arctangent，反正切函数（返回值在-π与π之间）                     | ArcTan[x,y]  (\*这里 x,y 顺序和前面是反的 \*) |
+|  12   |       atan2(y,x)       |                    Arctangent，反正切函数（返回值在 -π与π之间）                    | ArcTan[x,y]  (\*这里 x,y 顺序和前面是反的 \*) |
 |  13   |       beta(a,b)        |                             Β(a,b)，贝塔函数（β函数）                              |                   Beta[a,b]                   |
 |  14   |      beta(a,b,x)       |                              Β(x;a,b)，不完全贝塔函数                              |                  Beta[x,a,b]                  |
 |  15   | betaRegularized(a,b,x) |                           I(x;a,b)，正则化不完全贝塔函数                           |           BetaRegularized[x, a, b]            |
@@ -25,11 +27,11 @@
 |  17   |        ceil(x)         |                 Least integer greater than or equal，“向上取整”，                  |                  Ceiling[x]                   |
 |  18   |      conjugate(x)      |                                Conjugate，共轭函数                                 |                 Conjugate[x]                  |
 |  19   |         cos(x)         |                                      余弦函数                                      |                    Cos[x]                     |
-|  20   |   cosec(x) 或 csc(x)   |                    Cosecant，余割函数  cosec∠A=c/a（斜边/对边）                    |                    Csc[x]                     |
+|  20   |   cosec(x) 或 csc(x)   |                   Cosecant，余割函数  cosec∠A=c/a（斜边 / 对边）                   |                    Csc[x]                     |
 |  21   |  cosech(x) 或 csch(x)  |                         Hyperbolic cosecant，双曲余割函数                          |                    Csch[x]                    |
 |  22   |        cosh(x)         |                           Hyperbolic cosin，双曲余弦函数                           |                    Cosh[x]                    |
 |  23   |     cosIntegral(x)     |                             Cosine Integral，余弦积分                              |                CosIntegral[x]                 |
-|  24   |         cot(x)         |                    Cotangent，余切函数   cot∠A=c/a（邻边/对边）                    |                    Cot[x]                     |
+|  24   |         cot(x)         |                   Cotangent，余切函数   cot∠A=c/a（邻边 / 对边）                   |                    Cot[x]                     |
 |  25   |        coth(x)         |                         Hyperbolic cotangent，双曲余切函数                         |                    Coth[x]                    |
 |  26   |    exp(x) 或 $e^x$     |                           Exponential function，指数函数                           |                    Exp[x]                     |
 |  27   |         erf(x)         |                       Gaussian Error Function，高斯误差函数                        |                    Erf[x]                     |
@@ -50,9 +52,9 @@
 |  42   |        real(x)         |                              实值函数，复数的实部数值                              |                     Re[x]                     |
 |  43   |      random(a,b)       |                 Random number between a and b，a 与 b 之间的随机数                 |               RandomReal[a, b]                |
 |  44   |        round(x)        |                                  Round，四舍五入                                   |                   Round[x]                    |
-|  45   |         sec(x)         |                      Secant，正割函数  sec∠A=c/b（斜边/邻边）                      |                    Sec[x]                     |
+|  45   |         sec(x)         |                     Secant，正割函数  sec∠A=c/b（斜边 / 邻边）                     |                    Sec[x]                     |
 |  46   |        sech(x)         |                          Hyperbolic secant，双曲正割函数                           |                    Sech[x]                    |
-|  47   |   sgn(x) 或 sign(x)    |                 Sign，符号（x 为正数返回 1，负数返回-1，零返回 0）                 |                    Sign[x]                    |
+|  47   |   sgn(x) 或 sign(x)    |                Sign，符号（x 为正数返回 1，负数返回 -1，零返回 0）                 |                    Sign[x]                    |
 |  48   |         sin(x)         |                                   Sine，正弦函数                                   |                    Sin[x]                     |
 |  49   |        sinh(x)         |                           Hyperbolic sine，双曲正弦函数                            |                    Sinh[x]                    |
 |  50   |     sinIntegral(x)     | Sine Integral，正弦积分       缩写 Si(z)，Si(z)=∫sin(t)/tdt, 区间 (0,z) 上的定积分 |                SinIntegral[x]                 |
@@ -85,16 +87,16 @@
 > 几何作图部分没有直接对应，所以我就自己发挥了
 <center>
 
-|   ID   |         GeoGebra         |                    名称                    |                         Mathematica                          |
-| :----: | :----------------------: | :----------------------------------------: | :----------------------------------------------------------: |
-| 2.1.1  |     Side(<Quadric>)      | 侧面 (<二次曲面>) , 创建有限二次曲面的侧面 | Graphics3D[{CapForm[None], Tube[{{0, 0, 0}, {0, 0, 3}}, 1]}] |
-| 2.1.2  |    PerpendicularPlane    |                  垂直平面                  |                   InfinitePlane[p,{v1,v2}]                   |
-| 2.1.8  | Sphere(<Point>,<Radius>) |                    球面                    |                   Sphere[<Point>,<Radius>]                   |
-| 2.1.9  |         Surface          |                    曲面                    |                       ParametricPlot3D                       |
-| 2.1.11 |          Volume          |                    体积                    |                            Volume                            |
-| 2.1.16 |         Cylinder         |                    圆柱                    |                           Cylinder                           |
-| 2.1.1  |           Cone           |                    圆锥                    |                             Cone                             |
-| 2.1.16 |         Cylinder         |                    圆柱                    |                           Cylinder                           |
+|   ID   |         GeoGebra         |                     名称                     |                         Mathematica                          |
+| :----: | :----------------------: | :------------------------------------------: | :----------------------------------------------------------: |
+| 2.1.1  |     Side(<Quadric>)      | 侧面 (《二次曲面》) , 创建有限二次曲面的侧面 | Graphics3D[{CapForm[None], Tube[{{0, 0, 0}, {0, 0, 3}}, 1]}] |
+| 2.1.2  |    PerpendicularPlane    |                   垂直平面                   |                   InfinitePlane[p,{v1,v2}]                   |
+| 2.1.8  | Sphere(<Point>,<Radius>) |                     球面                     |                   Sphere[<Point>,<Radius>]                   |
+| 2.1.9  |         Surface          |                     曲面                     |                       ParametricPlot3D                       |
+| 2.1.11 |          Volume          |                     体积                     |                            Volume                            |
+| 2.1.16 |         Cylinder         |                     圆柱                     |                           Cylinder                           |
+| 2.1.1  |           Cone           |                     圆锥                     |                             Cone                             |
+| 2.1.16 |         Cylinder         |                     圆柱                     |                           Cylinder                           |
 
 </center>
 
@@ -102,50 +104,60 @@
 
 <center>
 
-|  ID   | GeoGebra  |          名称           |                                          Mathematica                                           |
-| :---: | :-------: | :---------------------: | :--------------------------------------------------------------------------------------------: |
-|       |  ToPoint  |    转换为点 (<复数>)    |                                              ReIm                                              |
-|       | ToComplex | 转换为复数 (<向量或点>) |                                          {x,y}.{1,I}I                                          |
-|       |  ToPolar  |    转换为极坐标形式     | 如果复数，CoordinateTransformData["Cartesian" -> "Polar", "Mapping", ReIm@x], 向量就去掉 ReIm@ |
+|  ID   | GeoGebra  |       名称       |                                          Mathematica                                           |
+| :---: | :-------: | :--------------: | :--------------------------------------------------------------------------------------------: |
+|       |  ToPoint  |     转换为点     |                                              ReIm                                              |
+|       | ToComplex |    转换为复数    |                                          {x,y}.{1,I}I                                          |
+|       |  ToPolar  | 转换为极坐标形式 | 如果复数，CoordinateTransformData["Cartesian" -> "Polar", "Mapping", ReIm@x], 向量就去掉 ReIm@ |
 
 </center>
 
 ## 2.5 代数
 
-|  ID   |                   GeoGebra                   | 名称  |                                   Mathematica                                    |
-| :---: | :------------------------------------------: | :---: | :------------------------------------------------------------------------------: |
-|       |                    Cross                     | 叉积  |                                      Cross                                       |
-|       | Division(<Dividend Number>,<Divisor Number>) | 除法  |                 QuotientRemainder 或 PolynomialQuotientRemainder                 |
-|       |                     Dot                      |       |                                       Dot                                        |
-|       |              CommonDenominator               |       |                        PolynomialLCM@Denominator /@ list                         |
-|       |                  NextPrime                   |       |                                    NextPrime                                     |
-|       |                   Simplify                   |       |                        Simplify      或     FullSimplify                         |
-|       |                  Solutions                   |       |                                  Values@*Solve                                   |
-|       |                    NSolve                    |       |                                      NSolve                                      |
-|       | NSolve(<Equation>,<Variable=starting value>) |       |                                     FindRoot                                     |
-|       |                  NSolutions                  |       |                                  Values@*NSolve                                  |
-|       |                CompleteSquare                |       |       /. a_. x_^2 + b_. x_ + c_ :> a (x + b/(2 a))^2 + (4 a c - b^2)/(4 a)       |
-|       |                PreviousPrime                 |       |                                 NextPrime[x,-1]                                  |
-|       |                    Solve                     |       |                                      Solve                                       |
-|       |                     Mod                      |       |                               Mod 或 PolynomialMod                               |
-|       |                     Div                      |       |                   Quotient         或      PolynomialQuotient                    |
-|       |                   IFactor                    |       |         Factor[x^2 - x - 1, Extension -> All]     (*只能在复数域上分解*)         |
-|       |                   IsPrime                    |       |                                      PrimeQ                                      |
-|       |                    Factor                    |       |                                      Factor                                      |
-|       |                   Divisors                   |       |                                DivisorSigma[0,x]                                 |
-|       |                 DivisorsSum                  |       |                   DivisorSum[x, # &]   或  DivisorSigma[1, x]                    |
-|       |                 DivisorsList                 |       |                                     Divisors                                     |
-|       |                  RightSide                   |       |                formula[[2]] 或 list/. Equal -> List //#[[;;,-1]]&                |
-|       |                    Expand                    |       |                                      Expand                                      |
-|       |                 PrimeFactors                 |       |         FactorInteger  或 ConstantArray @@@ FactorInteger[x] // Flatten          |
-|       |                    ToBase                    |       |                               IntegerDigits[23,8]                                |
-|       |                   FromBase                   |       |                                    FromDigits                                    |
-|       |                     GCD                      |       |                              GCD     PolynomialGCD                               |
-|       |                     Max                      |       | Max   list // Transpose // ConstantArray @@@ # & // Flatten // Max  FindMaximum  |
-|       |                     LCM                      |       |                               LCM   PolynomialLCM                                |
-|       |                     Min                      |       | Min   list // Transpose // ConstantArray @@@ # & // Flatten // Min   FindMaximum |
-|       |                   LeftSide                   |       |               formula[[1]]    或 list/. Equal -> List //#[[;;,1]]&               |
-|       |                                              |       |                                                                                  |
+|  ID   |                   GeoGebra                   |    名称    |                             Mathematica                              |
+| :---: | :------------------------------------------: | :--------: | :------------------------------------------------------------------: |
+|       |                    Cross                     |    叉积    |                                Cross                                 |
+|       |                   Division                   |    除法    |                          QuotientRemainder                           |
+|       |                   Division                   | 多项式除法 |                     PolynomialQuotientRemainder                      |
+|       |                     Dot                      |            |                                 Dot                                  |
+|       |              CommonDenominator               |            |                  PolynomialLCM@Denominator /@ list                   |
+|       |                  NextPrime                   |            |                              NextPrime                               |
+|       |                   Simplify                   |            |                  Simplify      或     FullSimplify                   |
+|       |                  Solutions                   |            |                            Values@*Solve                             |
+|       |                    NSolve                    |            |                                NSolve                                |
+|       | NSolve(<Equation>,<Variable=starting value>) |            |                               FindRoot                               |
+|       |                  NSolutions                  |            |                            Values@*NSolve                            |
+|       |                CompleteSquare                |            | /. a_. x_^2 + b_. x_ + c_ :> a (x + b/(2 a))^2 + (4 a c - b^2)/(4 a) |
+|       |                PreviousPrime                 |            |                           NextPrime[x,-1]                            |
+|       |                    Solve                     |            |                                Solve                                 |
+|       |                     Mod                      |            |                                 Mod                                  |
+|       |                     Mod                      |            |                            PolynomialMod                             |
+|       |                     Div                      |            |                               Quotient                               |
+|       |                     Div                      |            |                          PolynomialQuotient                          |
+|       |                   IFactor                    |            | Factor[x^2 - x - 1, Extension -> All]     (\*只能在复数域上分解 \*)  |
+|       |                   IsPrime                    |            |                                PrimeQ                                |
+|       |                    Factor                    |            |                                Factor                                |
+|       |                   Divisors                   |            |                          DivisorSigma[0,x]                           |
+|       |                 DivisorsSum                  |            |             DivisorSum[x, # &]   或  DivisorSigma[1, x]              |
+|       |                 DivisorsList                 |            |                               Divisors                               |
+|       |                  RightSide                   |            |                             formula[[2]]                             |
+|       |                  RightSide                   |            |                  list/. Equal -> List //#[[;;,-1]]&                  |
+|       |                    Expand                    |            |                                Expand                                |
+|       |                 PrimeFactors                 |            |            ConstantArray @@@ FactorInteger[x] // Flatten             |
+|       |                    ToBase                    |            |                         IntegerDigits[23,8]                          |
+|       |                   FromBase                   |            |                              FromDigits                              |
+|       |                     GCD                      |            |                                 GCD                                  |
+|       |                     GCD                      |            |                            PolynomialGCD                             |
+|       |                     Max                      |            |                                 Max                                  |
+|       |                     Max                      |            |     list // Transpose // ConstantArray @@@ # & // Flatten // Max     |
+|       |                     Max                      |            |                             FindMaximum                              |
+|       |                     LCM                      |            |                                 LCM                                  |
+|       |                     LCM                      |            |                            PolynomialLCM                             |
+|       |                     Min                      |            |                                 Min                                  |
+|       |                     Min                      |            |     list // Transpose // ConstantArray @@@ # & // Flatten // Min     |
+|       |                     Min                      |            |                             FindMaximum                              |
+|       |                   LeftSide                   |            |                             formula[[1]]                             |
+|       |                   LeftSide                   |            |                  list/. Equal -> List //#[[;;,1]]&                   |
 
 ## 2.6 概率
 
@@ -178,7 +190,9 @@
 |    Flatten    |                        Flatten                         |
 |     Union     |                   Union RegionUnion                    |
 |    Insert     |                         Insert                         |
-|    Product    | Times@@list   Block[{Plus=Times},Total@list]  Product  |
+|    Product    |                      Times@@list                       |
+|    Product    |             Block[{Plus=Times},Total@list]             |
+|    Product    |                        Product                         |
 |    Product    | // Transpose // # /. {a_, b_} :> a^b & // Times @@ # & |
 |    Product    |       // MapThread[#1^#2 &, #] & // Times @@ # &       |
 |     Join      |                          Join                          |
@@ -190,10 +204,83 @@
 |     Sort      |                          Sort                          |
 | RandomElement |                      RandomChoice                      |
 |    IndexOf    |                     FirstPosition                      |
-|     Take      |                  Take     StringTake                   |
-|   Sequence    |                     Table   Range                      |
+|     Take      |                          Take                          |
+|     Take      |                       StringTake                       |
+|   Sequence    |                         Table                          |
+|   Sequence    |                         Range                          |
 |      Zip      |     Map[f,list]         (\*区别是 mma 有纯函数 \*)     |
 |    Element    |                          [[]]                          |
 |    Append     |                         Append                         |
 |     Last      |                          Last                          |
 |     First     |                         First                          |
+
+## 2.13 Logical.逻辑
+
+
+<center>
+
+|  GeoGebra  | Mathematica  |
+| :--------: | :----------: |
+|     If     |      If      |
+| IsInteger  |   IntegerQ   |
+| IsDefined  |  Definition  |
+| IsInRegion | RegionMember |
+|  CountIf   |    Count     |
+|   KeepIf   |    Select    |
+
+## 2.14 Statistics.统计
+
+|    GeoGebra    |                                       Mathematica                                        |
+| :------------: | :--------------------------------------------------------------------------------------: |
+|      Mad       |                                      MeanDeviation                                       |
+|      Mean      |                                           Mean                                           |
+|    SigmaXX     | list//#[[;;,1]]&//#^2&//Total    或  list//#[[;;,1]]&// #.#& 或  list//First/@#& // #.#& |
+|    SigmaXY     |                              list// Times @@@ # & // Total                               |
+|    SigmaXY     |                                        list//#.#&                                        |
+|    SigmaYY     |                                  list//Last/@#& // #.#&                                  |
+|    Spearma     |                                       SpearmanRho                                        |
+|  Stdev.Sstdev  |                                   list//Variance//Sqrt                                   |
+| Stdevp.Stdevp  |                                    StandardDeviation                                     |
+|      Sxx       |                          list// (#.# - (Total@# )^2)/Length@# &                          |
+|      Sxx       |                    list// First/@#&//(#.# - (Total@# )^2/Length@#) &                     |
+|      Sxy       |     list// Total@(Times @@@ #) - (Total@(First /@ #))*(Total@(Last /@ #))/Length@# &     |
+|      Sxy       |             list// #1.#2 - (Total@#1*Total@#2)/Length@# &[#[[1]], #[[2]]] &              |
+|      Syy       |                   list// Last /@ # & // (#.# - (Total@#)^2/Length@#) &                   |
+|     TTest      |                                          TTest                                           |
+|   Percentile   |                                         Quantile                                         |
+|       SD       |                                    StandardDeviation                                     |
+|   ZMeanTest    |                            ZTest     (\*ZTest 系列不清楚 \*)                             |
+|       Q1       |                           Quartiles[{1, 3, 4, 2, 5, 6}]//First                           |
+|       Q3       |                           Quartiles[{1, 3, 4, 2, 5, 6}]//Last                            |
+|  HarmonicMean  |                                       HarmonicMean                                       |
+|     FitLog     |       NonlinearModelFit[{{E, 1}, {E^2, 4}}, {a Log[x] + b}, {a, b},   x] // Normal       |
+|    FitPoly     |            Fit[{{-1, -1}, {0, 1}, {1, 1}, {2, 5}}, x^Range[0, 3], x] // Chop             |
+|    Variance    |                                         Variance                                         |
+|     ANOVA      |                                          不清楚                                          |
+|      SDX       |  横坐标标准差     {{1,1},{2,2},{3,1},{3,3},{4,2},{3,-1}} //First/@#&//StandardDeviation  |
+|     MeanX      |                                  list//First/@#&//Mean                                   |
+| GeometricMean  |                                      GeometricMean                                       |
+| RootMeanSquare |                                      RootMeanSquare                                      |
+| ChiSquaredTest |                                   PearsonChiSquareTest                                   |
+|    RSquare     |                                          不清楚                                          |
+|  FitLogistic   |               NonlinearModelFit[list, {a/(1 + b E^(-c x))}, {a, b, c}, x]                |
+|     FitPow     |                       NonlinearModelFit[list, {a x^b}, {a, b}, x]                        |
+|      Fit       |                                           Fit                                            |
+|    FitLineX    |                                    Fit[list,{1,x},x]                                     |
+|    FitLineY    |                                          不清楚                                          |
+|  TTestPaired   |                                       PairedTTest                                        |
+|   FitGrowth    |                     NonlinearModelFit[list, {a b ^( x)}, {a, b}, x]                      |
+|    Shuffle     |                                       RandomSample                                       |
+|   Covariance   |                                        Covariance                                        |
+|     Sample     |                                       RandomSample                                       |
+|  FitImplicit   |                                   拟合隐函数,没想出来                                    |
+|     FitSin     |                NonlinearModelFit[list, {a+ b Sin[c x+d]}, {a, b,c,d}, x]                 |
+|     FitExp     |                       NonlinearModelFit[list, {E ^(a x)}, {a}, x]                        |
+|     Median     |                                          Median                                          |
+|      Mode      |                                        Commonest                                         |
+|      Sum       |                                          Total                                           |
+|      Sum       |                                        StringJoin                                        |
+|      SDY       |  纵坐标标准差     {{1,1},{2,2},{3,1},{3,3},{4,2},{3,-1}} //Last/@#&//StandardDeviation   |
+|     MeanY      |                                   list//Last/@#&//Mean                                   |
+
+</center>
