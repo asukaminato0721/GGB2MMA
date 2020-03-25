@@ -284,3 +284,68 @@
 |     MeanY      |                                   list//Last/@#&//Mean                                   |
 
 </center>
+
+## 2.7 Function.函数与微积分
+
+
+<center>
+
+|                   GeoGebra                   |            Mathematica            |
+| :------------------------------------------: | :-------------------------------: |
+|               PartialFractions               |               Apart               |
+|             ParametricDerivative             |                 D                 |
+|                    Degree                    |             Exponent              |
+|                  Derivative                  |                                   |
+|                Iteration.迭代                |               Nest                |
+|            IterationList.迭代列表            |             NestList              |
+|               NIntegral.定积分               |            NIntegrate             |
+|            Polynomial.多项式函数             |              Expand               |
+|         Polynomial(<List of Points>)         |      InterpolatingPolynomial      |
+| Polynomial(<Function>)；多项式函数(<函数>)。 |      //Expand//Collect[#,x]&      |
+|     NInvert(<Function>)；反函数(<函数>)      |          InverseFunction          |
+|                 Denominator                  |            Denominator            |
+|                  Numerator                   |             Numerator             |
+|                 ComplexRoot                  |               Solve               |
+|               InflectionPoint                |       D[#,x]&//Solve[#==0]&       |
+|                  Normalize                   |             Normalize             |
+|                   Function                   |        InterpolationOrder         |
+|                   Function                   |           Plot  Plot3D            |
+|                   Integral                   |             Integrate             |
+|               IntegralBetween                |   Integrate[f[x]-g[x],{x,a,b}]    |
+|                    Limit                     |               Limit               |
+|                   Extremum                   |             Maximize              |
+|                  Asymptote                   |               放弃                |
+|                   SolveODE                   |              DSolve               |
+|                   SolveODE                   |              NDSolve              |
+|                  NSolveODE                   |              NDSolve              |
+|                 RectangleSum                 |
+|                     Root                     |               Solve               |
+|                     Root                     |             FindRoot              |
+|                   RootList                   |           {#,0}&/@list            |
+|                PathParameter                 |   点值 （Mathematica 无此概念）   |
+|               OsculatingCircle               |              密切圆               |
+|                SVD.奇异值分解                |    SingularValueDecomposition     |
+|                Curvature.曲率                |           ArcCurvature            |
+|               CurvatureVector                |
+|         Curve（CurveCartesian）.曲线         |  ParametricPlot ParametricPlot3D  |
+|            TrigCombine.三角式合并            |            TrigReduce             |
+|                 TrigSimplify                 |           FullSimplify            |
+|                  TrigExpand                  |            TrigExpand             |
+|                   UpperSum                   |
+|                 NDerivative                  |                 D                 |
+|               TaylorPolynomial               |              Series               |
+|           TrapezoidalSum.梯形法则            |
+|                 Coefficients                 |          CoefficientList          |
+|                LowerSum.下和                 |
+|              SlopeField.斜率场               |
+|               Spline.样条曲线                |           BSplineCurve            |
+|                   Factors                    |              Factor               |
+|                   Factors                    |           FactorInteger           |
+|            ImplicitCurve.隐式曲线            |
+|         ImplicitDerivative.隐式微分          |
+|              LimitAbove.右极限               | Limit[, Direction -> "FromAbove"] |
+|                 LeftSum.左和                 |                                   |
+|              LimitBelow.左极限               | Limit[, Direction -> "FromBelow"] |
+|                                              |
+
+</center>
