@@ -1,7 +1,10 @@
+# GGB2MMA
 
 相比 Mathematica, GeoGebra 在教师中受众更广，（免费，开源）
 
 本文提供 GGB2MMA 的代码实现，由于 GGB 的函数重载现象很普遍，所以每个不同的功能都用单独写一行来区分
+
+如果需要在函数之间找对应，只需 `Ctrl`+`F` 在网页搜索
 
 ## 1.2 函数
 <center>
@@ -337,7 +340,7 @@
 |           TrapezoidalSum.梯形法则            |
 |                 Coefficients                 |          CoefficientList          |
 |                LowerSum.下和                 |
-|              SlopeField.斜率场               |
+|              SlopeField.斜率场               |            VectorPlot             |
 |               Spline.样条曲线                |           BSplineCurve            |
 |                   Factors                    |              Factor               |
 |                   Factors                    |           FactorInteger           |
