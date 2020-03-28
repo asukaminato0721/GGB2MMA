@@ -92,9 +92,9 @@
 
 |   ID   |         GeoGebra         |                     名称                     |                         Mathematica                          |
 | :----: | :----------------------: | :------------------------------------------: | :----------------------------------------------------------: |
-| 2.1.1  |     Side(<Quadric>)      | 侧面 (《二次曲面》) , 创建有限二次曲面的侧面 | Graphics3D[{CapForm[None], Tube[{{0, 0, 0}, {0, 0, 3}}, 1]}] |
+| 2.1.1  |     Side(\<Quadric>)      | 侧面 (《二次曲面》) , 创建有限二次曲面的侧面 | Graphics3D[{CapForm[None], Tube[{{0, 0, 0}, {0, 0, 3}}, 1]}] |
 | 2.1.2  |    PerpendicularPlane    |                   垂直平面                   |                   InfinitePlane[p,{v1,v2}]                   |
-| 2.1.8  | Sphere(<Point>,<Radius>) |                     球面                     |                   Sphere[<Point>,<Radius>]                   |
+| 2.1.8  | Sphere(\<Point>,\<Radius>) |                     球面                     |                   Sphere[<Point>,\<Radius>]                   |
 | 2.1.9  |         Surface          |                     曲面                     |                       ParametricPlot3D                       |
 | 2.1.11 |          Volume          |                     体积                     |                            Volume                            |
 | 2.1.16 |         Cylinder         |                     圆柱                     |                           Cylinder                           |
@@ -128,7 +128,7 @@
 |       |                   Simplify                   |            |                  Simplify      或     FullSimplify                   |
 |       |                  Solutions                   |            |                            Values@*Solve                             |
 |       |                    NSolve                    |            |                                NSolve                                |
-|       | NSolve(<Equation>,<Variable=starting value>) |            |                               FindRoot                               |
+|       | NSolve(\<Equation>,\<Variable=starting value>) |            |                               FindRoot                               |
 |       |                  NSolutions                  |            |                            Values@*NSolve                            |
 |       |                CompleteSquare                |            | /. a_. x_^2 + b_. x_ + c_ :> a (x + b/(2 a))^2 + (4 a c - b^2)/(4 a) |
 |       |                PreviousPrime                 |            |                           NextPrime[x,-1]                            |
@@ -203,9 +203,9 @@
 |            IterationList.迭代列表            |             NestList              |
 |               NIntegral.定积分               |            NIntegrate             |
 |            Polynomial.多项式函数             |              Expand               |
-|         Polynomial(<List of Points>)         |      InterpolatingPolynomial      |
-| Polynomial(<Function>)；多项式函数(<函数>)。 |      //Expand//Collect[#,x]&      |
-|     NInvert(<Function>)；反函数(<函数>)      |          InverseFunction          |
+|         Polynomial(\<List of Points>)         |      InterpolatingPolynomial      |
+| Polynomial(\<Function>)；多项式函数(<函数>)。 |      //Expand//Collect[#,x]&      |
+|     NInvert(\<Function>)；反函数(<函数>)      |          InverseFunction          |
 |                 Denominator                  |            Denominator            |
 |                  Numerator                   |             Numerator             |
 |                 ComplexRoot                  |               Solve               |
@@ -263,64 +263,64 @@
 |                                        Length.长度                                        |                      ArcLength                      |
 |                                        Length.长度                                        |                       Length                        |
 |                         PerpendicularLine（OrthogonalLine）.垂线                          |                       无对应                        |
-|                            Vertex(<Conic>)；顶点(<圆锥曲线>)。                            |                       无对应                        |
-|                          Vertex(<Inequality>)；顶点(<不等式>)。                           |                       无对应                        |
-|                            Vertex(<Polygon>)；顶点(<多边形>)。                            |                       无对应                        |
-|                        Polygon(<List of Points>)；多边形(<点列>)。                        |                       Polygon                       |
-|                     Direction(<Line>)；方向向量(<直线 , 射线,线段>)。                     |                       无对应                        |
-|                      RigidPolygon(<Polygon>)；刚体多边形(<多边形>)。                      |                       无对应                        |
-|      Locus(<Point Creating Locus Line Q>,<Point P>)；轨迹(<构造轨迹的点>,<控制点>)。      |                       无对应                        |
-|                      Locus(<f(x,y)>,<Point>)；轨迹(<f(x,y)>,<点>)。                       |                       无对应                        |
-|                        LocusEquation(<Locus>)；轨迹方程(<轨迹>)。                         |                       无对应                        |
-|    LocusEquation(<Boolean Expression>,<Free Point>)；轨迹方程(<布尔表达式>,<自由点>)。    |                       Boolean                       |
+|                            Vertex(\<Conic>)；顶点(<圆锥曲线>)。                            |                       无对应                        |
+|                          Vertex(\<Inequality>)；顶点(<不等式>)。                           |                       无对应                        |
+|                            Vertex(\<Polygon>)；顶点(<多边形>)。                            |                       无对应                        |
+|                        Polygon(\<List of Points>)；多边形(<点列>)。                        |                       Polygon                       |
+|                     Direction(\<Line>)；方向向量(<直线 , 射线,线段>)。                     |                       无对应                        |
+|                      RigidPolygon(\<Polygon>)；刚体多边形(<多边形>)。                      |                       无对应                        |
+|      Locus(\<Point Creating Locus Line Q>,\<Point P>)；轨迹(<构造轨迹的点>,<控制点>)。      |                       无对应                        |
+|                      Locus(\<f(x,y)>,\<Point>)；轨迹(\<f(x,y)>,<点>)。                       |                       无对应                        |
+|                        LocusEquation(\<Locus>)；轨迹方程(<轨迹>)。                         |                       无对应                        |
+|    LocusEquation(\<Boolean Expression>,\<Free Point>)；轨迹方程(<布尔表达式>,<自由点>)。    |                       Boolean                       |
 |                                         Arc.弧线                                          |                       无对应                        |
 |                                      CrossRatio.交比                                      |                       无对应                        |
 |                                      Intersect.交点                                       |                        Solve                        |
 |                                  AngleBisector.角平分线                                   |                       无对应                        |
 |                                       Distance.距离                                       |                   RegionDistance                    |
-|              Angle(<Object>)；角度(<对象 圆锥曲线,向量,点,数字,多边形>)）。               |                     AngleVector                     |
+|              Angle(\<Object>)；角度(<对象 圆锥曲线,向量,点,数字,多边形>)）。               |                     AngleVector                     |
 |                                         Area.面积                                         |                        Area                         |
-|                           Point(<List>)；描点(<有序数组列表>)。                           |                        Point                        |
+|                           Point(\<List>)；描点(<有序数组列表>)。                           |                        Point                        |
 |                                          PointIn                                          |                     RandomPoint                     |
-|                        InteriorAngles(<Polygon>)；内角(<多边形>)。                        |                       无对应                        |
-|                     Tangent(<Point>,<Conic>)；切线(<点>,<圆锥曲线>)。                     |                       无对应                        |
-|              ClosestPointRegion(<Region>,<Point>)；区域内最近点(<区域>,<点>)              |                    RegionNearest                    |
-|          Cubic(<Point>,<Point>,<Point>,<Number>)；三次曲线(<点 1>,<点 2>,<点 3>           |                       无对应                        |
+|                        InteriorAngles(\<Polygon>)；内角(<多边形>)。                        |                       无对应                        |
+|                     Tangent(\<Point>,\<Conic>)；切线(<点>,<圆锥曲线>)。                     |                       无对应                        |
+|              ClosestPointRegion(\<Region>,\<Point>)；区域内最近点(<区域>,<点>)              |                    RegionNearest                    |
+|          Cubic(\<Point>,\<Point>,\<Point>,\<Number>)；三次曲线(<点 1>,<点 2>,<点 3>           |                       无对应                        |
 |                               CircumcircularSector.三点扇形                               |                       无对应                        |
 |                                CircumcircularArc.三点圆弧                                 |                       无对应                        |
 |                                  TriangleCurve.三角曲线                                   |                       无对应                        |
-| TriangleCenter(<Point>,<Point>,<Point>,<Number>)；三角形中心(<点 1>,<点 2>,<点 3>,<数字>) |                                                     |
+| TriangleCenter(\<Point>,\<Point>,\<Point>,\<Number>)；三角形中心(<点 1>,<点 2>,<点 3>,<数字>) |                                                     |
 |                                   Trilinear.三线坐标点                                    |                       无对应                        |
-|             Sector(<Conic>,<Point>,<Point>)；扇形(<圆或椭圆>,<点 1>,<点 2>)。             |                       无对应                        |
-|                      Ray(<Start Point>,<Point>)；射线(<起点>,<点>)。                      |                       无对应                        |
-|              ArePerpendicular(<Line>,<Line>)；是否垂直(<直线 1>,<直线 2>)。               |                       无对应                        |
-|        AreConcurrent(<Line>,<Line>,<Line>)；是否共点(<直线 1>,<直线 2>,<直线 3>)。        |                       无对应                        |
-|          AreCollinear(<Point>,<Point>,<Point>)，是否共线(<点 1>,<点 2>,<点 3>)。          |                       无对应                        |
+|             Sector(\<Conic>,\<Point>,\<Point>)；扇形(<圆或椭圆>,<点 1>,<点 2>)。             |                       无对应                        |
+|                      Ray(\<Start Point>,\<Point>)；射线(<起点>,<点>)。                      |                       无对应                        |
+|              ArePerpendicular(\<Line>,\<Line>)；是否垂直(<直线 1>,<直线 2>)。               |                       无对应                        |
+|        AreConcurrent(\<Line>,\<Line>,\<Line>)；是否共点(<直线 1>,<直线 2>,<直线 3>)。        |                       无对应                        |
+|          AreCollinear(\<Point>,\<Point>,\<Point>)，是否共线(<点 1>,<点 2>,<点 3>)。          |                       无对应                        |
 |                                   AreConcyclic.是否共圆                                   |
-|                 AreParallel(<Line>,<Line>)；是否平行(<直线 1>,<直线 2>。                  |
-|           AreCongruent(<Object>,<Object>)；是否全等(<几何对象1>,<几何对象 2>)。           |
-|            AreEqual(<Object>,<Object>)；是否相等(<几何对象 1>,<几何对象 2>)。             |                        Equal                        |
-|                  IsTangent(<Line>,<Conic>)；是否相切(<直线>,<圆锥曲线>)                   |
-|                      Segment(<Point>,<Point>)；线段(<点 1>,<点 2>)。                      |                        Line                         |
+|                 AreParallel(\<Line>,\<Line>)；是否平行(<直线 1>,<直线 2>。                  |
+|           AreCongruent(\<Object>,\<Object>)；是否全等(<几何对象1>,<几何对象 2>)。           |
+|            AreEqual(\<Object>,\<Object>)；是否相等(<几何对象 1>,<几何对象 2>)。             |                        Equal                        |
+|                  IsTangent(\<Line>,\<Conic>)；是否相切(<直线>,<圆锥曲线>)                   |
+|                      Segment(\<Point>,\<Point>)；线段(<点 1>,<点 2>)。                      |                        Line                         |
 |                                  IntersectPath.相交路径                                   |
-|                         Slope(<Line>)；斜率(<直线, 射线, 线段>)。                         |
-|                           Centroid(<Polygon>)；形心(<多边形>)。                           |                   RegionCentroid                    |
-|         CircularArc(<Midpoint>,<Point A>,<Point B>)；圆弧(<圆心>,<点 1>,<点 2>)。         |
-|      CircularSector(<Midpoint>,<Point A>,<Point B>)；圆扇形(<圆心>,<点 1>,<点 2>)。       |
+|                         Slope(\<Line>)；斜率(<直线, 射线, 线段>)。                         |
+|                           Centroid(\<Polygon>)；形心(<多边形>)。                           |                   RegionCentroid                    |
+|         CircularArc(\<Midpoint>,\<Point A>,\<Point B>)；圆弧(<圆心>,<点 1>,<点 2>)。         |
+|      CircularSector(\<Midpoint>,\<Point A>,\<Point B>)；圆扇形(<圆心>,<点 1>,<点 2>)。       |
 |                        Circumference(Conic)；圆周长(<圆锥曲线>)。                         |                      ArcLength                      |
-|                        Polyline(<List of Points>)；折线(<点列>)。                         |                        Line                         |
-|                     Prove(<Boolean Expression>)；证明(<布尔表达式>)。                     |
-|               ProveDetails(<Boolean Expression>)；证明过程(<布尔表达式>)。                |
-|                       Line(<Point>,<Point>)；直线(<点 1>,<点 2>)。                        |                    InfiniteLine                     |
+|                        Polyline(\<List of Points>)；折线(<点列>)。                         |                        Line                         |
+|                     Prove(\<Boolean Expression>)；证明(<布尔表达式>)。                     |
+|               ProveDetails(\<Boolean Expression>)；证明过程(<布尔表达式>)。                |
+|                       Line(\<Point>,\<Point>)；直线(<点 1>,<点 2>)。                        |                    InfiniteLine                     |
 |                        PerpendicularBisector(LineBisector).中垂线                         |                PerpendicularBisector                |
 |                                       Midpoint.中点                                       |                       无对应                        |
-|          Barycenter(<List of Points>,<List of Weights>)；重心(<点列>,<权重列表>)          | //MapThread[ConstantArray, #]&//Flatten[#,1]&//Mean |
-|                          Perimeter(<Polygon>)；周长(<多边形>)。                           |                      Perimeter                      |
-|                    ClosestPoint(<Path>,<Point>)；最近点(<路径>,<点>)。                    |                    RegionNearest                    |
-|                Reflect(<Object>,<Point>)；对称(<几何对象>,<对称中心点>)。                 |                 ReflectionTransform                 |
-|                  Translate(<Object>,<Vector>)；平移(<几何对象>,<向量>)。                  |                      Translate                      |
-|         Shear(<Object>,<Line>,<Ratio>)；切变(<几何对象>,<直线,射线,线段>,<比>)。          |                  ShearingTransform                  |
-|                   Stretch(<Object>,<Vector>)；伸缩(<几何对象>,<向量>)。                   |
+|          Barycenter(\<List of Points>,\<List of Weights>)；重心(<点列>,<权重列表>)          | //MapThread[ConstantArray, #]&//Flatten[#,1]&//Mean |
+|                          Perimeter(\<Polygon>)；周长(<多边形>)。                           |                      Perimeter                      |
+|                    ClosestPoint(\<Path>,\<Point>)；最近点(<路径>,<点>)。                    |                    RegionNearest                    |
+|                Reflect(\<Object>,\<Point>)；对称(<几何对象>,<对称中心点>)。                 |                 ReflectionTransform                 |
+|                  Translate(\<Object>,\<Vector>)；平移(<几何对象>,<向量>)。                  |                      Translate                      |
+|         Shear(\<Object>,\<Line>,\<Ratio>)；切变(<几何对象>,<直线,射线,线段>,<比>)。          |                  ShearingTransform                  |
+|                   Stretch(\<Object>,\<Vector>)；伸缩(<几何对象>,<向量>)。                   |
 |                                   Dilate(Enlarge).位似                                    |
 |                                          Rotate                                           |                       Rotate                        |
 
@@ -328,36 +328,36 @@
 
 |                                      GeoGebra                                      |  Mathematica  |
 | :--------------------------------------------------------------------------------: | :-----------: |
-|                         Button(<Caption>)；按钮("<标题>")                          |    Button     |
-|                        PlaySound(<URL>)；播放声音(<网址>)。                        |     Play      |
-|                        PlaySound(<URL>)；播放声音(<网址>)。                        |     Sound     |
+|                         Button(\<Caption>)；按钮("<标题>")                          |    Button     |
+|                        PlaySound(\<URL>)；播放声音(<网址>)。                        |     Play      |
+|                        PlaySound(\<URL>)；播放声音(<网址>)。                        |     Sound     |
 |                                ExportImage.导出图片                                |    Export     |
-|                     ZoomIn(<Scale Factor>)；放大(<缩放因子>)。                     | Ctrl+鼠标滚轮 |
+|                     ZoomIn(\<Scale Factor>)；放大(<缩放因子>)。                     | Ctrl+鼠标滚轮 |
 |                                   SetValue.赋值                                    |      Set      |
 |                                  Checkbox.复选框                                   |   Checkbox    |
-|                  CopyFreeObject(<Object>)；复制自由对象(<对象>)。                  |
-|     AttachCopyToView(<Object>,<View 0,1,2>)；附加副本(<对象>,<视图 0 ,1,2>)。      |
+|                  CopyFreeObject(\<Object>)；复制自由对象(<对象>)。                  |
+|     AttachCopyToView(\<Object>,\<View 0,1,2>)；附加副本(<对象>,<视图 0 ,1,2>)。      |
 |                        UpdateConstruction( )；更新作图( )。                        |
 |                                 Turtle()；海龟()。                                 |
-|               TurtleBack(<Turtle>,<Distance>)；后退(<海龟>,<路程>)。               |
+|               TurtleBack(\<Turtle>,\<Distance>)；后退(<海龟>,<路程>)。               |
 |                                   Slider.滑动条                                    |    Slider     |
-|        ParseToFunction(<Function>,<String>)；解析为函数(<函数>,<字符串>)。         | ToExpression  |
+|        ParseToFunction(\<Function>,\<String>)；解析为函数(<函数>,<字符串>)。         | ToExpression  |
 |                               ParseToNumber.解析为数                               | ToExpression  |
 |                                StartRecord.开始记录                                |
-|                        TurtleDown(<Turtle>)；落笔(<海龟>)。                        |
-|                         Pan(<x>,<y>)；平移视图(<x>,<y>)。                          |
+|                        TurtleDown(\<Turtle>)；落笔(<海龟>)。                        |
+|                         Pan(\<x>,\<y>)；平移视图(\<x>,\<y>)。                          |
 |                              StartAnimation.启动动画                               |
 |                               StartLogging.启动日志                                |
-|             TurtleForward(<Turtle>,<Distance>)；前进(<海龟>,<路程>)。              |
-|                          Delete(<Object>)；删除(<对象>)。                          |
+|             TurtleForward(\<Turtle>,\<Distance>)；前进(<海龟>,<路程>)。              |
+|                          Delete(\<Object>)；删除(<对象>)。                          |
 |                          SetBackgroundColor.设置背景颜色                           |
 |                               SetDecoration.设置标记                               |
 |                             SetLabelMode.设置标签模式                              |
-|            SetCaption(<Object>,<Text>)；设置标题(<对象>,"<标题文本>")。            |
+|            SetCaption(\<Object>,\<Text>)；设置标题(<对象>,"<标题文本>")。            |
 |                               SetPointSize.设置点径                                |   PointSize   |
 |                               SetPointStyle.设置点型                               |  PointLegend  |
 |                            SetDynamicColor.设置动态颜色                            |
-|      SetFixed(<Object>,<true,false>)；设置设置对象锁定(<对象>,<true,false>)。      |
+|      SetFixed(\<Object>,\<true,false>)；设置设置对象锁定(<对象>,\<true,false>)。      |
 |                              SetPerspective.设置格局                               |
 |                                 SetTrace.设置跟踪                                  |
 |                          SetTooltipMode.设置工具提示模式                           |    Tooltip    |
@@ -366,12 +366,12 @@
 |                           SetViewDirection.设置视图方向                            |   ViewPoint   |
 |                                SetFilling.设置填充                                 |
 |                                 SetLayer.设置图层                                  |
-| SetLevelOfDetail(<Surface>,<Level of Detail>)；设置细节级别(<曲面>,<细节级别 0,1>) |
+| SetLevelOfDetail(\<Surface>,\<Level of Detail>)；设置细节级别(<曲面>,<细节级别 0,1>) |
 |                       SetConditionToShowObject.设置显示条件                        |
 |                             SetLineThickness.设置线径                              |   Thickness   |
 |                               SetLineStyle.设置线型                                |    Dashed     |
 |                                 SetColor.设置颜色                                  |
-|                       SetSeed(<Integer>)；设置种子(<整数>)。                       |  SeedRandom   |
+|                       SetSeed(\<Integer>)；设置种子(<整数>)。                       |  SeedRandom   |
 |                               SetSpinSpeed.设置转速                                |
 |                                 SetCoords.设置坐标                                 |
 |                            SetAxesRatio.设置坐标轴比例                             |  AspectRatio  |
@@ -382,17 +382,17 @@
 |                                StopLogging.停止日志                                |
 |                                  GetTime.系统时间                                  | TimeObject[]  |
 |                                 ShowLabel.显示标签                                 |
-|                      ShowLayer(<Number>)；显示图层(<数值>)。                       |
+|                      ShowLayer(\<Number>)；显示图层(<数值>)。                       |
 |                             ShowGrid( )；显示网格( )。                             |   GridLines   |
 |                                ShowAxes.显示坐标轴                                 |     Axes      |
 |                                 SelectObjects.选择                                 |
 |                                 HideLayer.隐藏图层                                 |
 |                                  TurtleRight.右转                                  |
-|                        ReadText(<Text>)；阅读文本("<文本>")                        |
+|                        ReadText(\<Text>)；阅读文本("<文本>")                        |
 |                            RunClickScript.运行单击脚本                             |
 |                            RunUpdateScript.运行更新脚本                            |
-|                    Execute(<List of Texts>)；执行(<文本列表>)。                    | ToExpression  |
-|    CenterView(<Center Point>)；中心定位(<视图中心设置坐标(x,y) , 视图中心点>)。    |  AxesOrigin   |
+|                    Execute(\<List of Texts>)；执行(<文本列表>)。                    | ToExpression  |
+|    CenterView(\<Center Point>)；中心定位(<视图中心设置坐标(x,y) , 视图中心点>)。    |  AxesOrigin   |
 |                                    Repeat.重复                                     |
 |                                   Rename.重命名                                    |
 |                                  TurtleLeft.左转                                   |
@@ -405,9 +405,9 @@
 |            DelaunayTriangulation.Delaunay 三角网            |   DelaunayMesh   |
 |                     Voronoi.Voronoi 图                      |   VoronoiMesh    |
 |                TravelingSalesman.旅行商问题                 | FindShortestTour |
-|        ConvexHull(<List of Points>)；凸包(<点列>)。         |  ConvexHullMesh  |
+|        ConvexHull(\<List of Points>)；凸包(<点列>)。         |  ConvexHullMesh  |
 |                  ShortestDistance.最短距离                  | FindShortestPath |
-| MinimumSpanningTree(<List of Points>)；最小生成树(<点列>)。 | FindSpanningTree |
+| MinimumSpanningTree(\<List of Points>)；最小生成树(<点列>)。 | FindSpanningTree |
 
 
 
