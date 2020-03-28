@@ -352,3 +352,74 @@
 |                                              |
 
 </center>
+
+2.8 Geometry.几何
+
+|                                         GeoGebra                                          |                     Mathematica                     |
+| :---------------------------------------------------------------------------------------: | :-------------------------------------------------: |
+|                                        Radius.半径                                        |              ArcLength[Circle[]]/(2Pi)              |
+|                                       envelope.包络                                       |                       无对应                        |
+|                                      Difference.差异                                      |                  RegionDifference                   |
+|                                        Length.长度                                        |                      ArcLength                      |
+|                                        Length.长度                                        |                       Length                        |
+|                         PerpendicularLine（OrthogonalLine）.垂线                          |                       无对应                        |
+|                            Vertex(<Conic>)；顶点(<圆锥曲线>)。                            |                       无对应                        |
+|                          Vertex(<Inequality>)；顶点(<不等式>)。                           |                       无对应                        |
+|                            Vertex(<Polygon>)；顶点(<多边形>)。                            |                       无对应                        |
+|                        Polygon(<List of Points>)；多边形(<点列>)。                        |                       Polygon                       |
+|                     Direction(<Line>)；方向向量(<直线 , 射线,线段>)。                     |                       无对应                        |
+|                      RigidPolygon(<Polygon>)；刚体多边形(<多边形>)。                      |                       无对应                        |
+|      Locus(<Point Creating Locus Line Q>,<Point P>)；轨迹(<构造轨迹的点>,<控制点>)。      |                       无对应                        |
+|                      Locus(<f(x,y)>,<Point>)；轨迹(<f(x,y)>,<点>)。                       |                       无对应                        |
+|                        LocusEquation(<Locus>)；轨迹方程(<轨迹>)。                         |                       无对应                        |
+|    LocusEquation(<Boolean Expression>,<Free Point>)；轨迹方程(<布尔表达式>,<自由点>)。    |                       Boolean                       |
+|                                         Arc.弧线                                          |                       无对应                        |
+|                                      CrossRatio.交比                                      |                       无对应                        |
+|                                      Intersect.交点                                       |                        Solve                        |
+|                                  AngleBisector.角平分线                                   |                       无对应                        |
+|                                       Distance.距离                                       |                   RegionDistance                    |
+|              Angle(<Object>)；角度(<对象 圆锥曲线,向量,点,数字,多边形>)）。               |                     AngleVector                     |
+|                                         Area.面积                                         |                        Area                         |
+|                           Point(<List>)；描点(<有序数组列表>)。                           |                        Point                        |
+|                                          PointIn                                          |                     RandomPoint                     |
+|                        InteriorAngles(<Polygon>)；内角(<多边形>)。                        |                       无对应                        |
+|                     Tangent(<Point>,<Conic>)；切线(<点>,<圆锥曲线>)。                     |                       无对应                        |
+|              ClosestPointRegion(<Region>,<Point>)；区域内最近点(<区域>,<点>)              |                    RegionNearest                    |
+|          Cubic(<Point>,<Point>,<Point>,<Number>)；三次曲线(<点 1>,<点 2>,<点 3>           |                       无对应                        |
+|                               CircumcircularSector.三点扇形                               |                       无对应                        |
+|                                CircumcircularArc.三点圆弧                                 |                       无对应                        |
+|                                  TriangleCurve.三角曲线                                   |                       无对应                        |
+| TriangleCenter(<Point>,<Point>,<Point>,<Number>)；三角形中心(<点 1>,<点 2>,<点 3>,<数字>) |                                                     |
+|                                   Trilinear.三线坐标点                                    |                       无对应                        |
+|             Sector(<Conic>,<Point>,<Point>)；扇形(<圆或椭圆>,<点 1>,<点 2>)。             |                       无对应                        |
+|                      Ray(<Start Point>,<Point>)；射线(<起点>,<点>)。                      |                       无对应                        |
+|              ArePerpendicular(<Line>,<Line>)；是否垂直(<直线 1>,<直线 2>)。               |                       无对应                        |
+|        AreConcurrent(<Line>,<Line>,<Line>)；是否共点(<直线 1>,<直线 2>,<直线 3>)。        |                       无对应                        |
+|          AreCollinear(<Point>,<Point>,<Point>)，是否共线(<点 1>,<点 2>,<点 3>)。          |                       无对应                        |
+|                                   AreConcyclic.是否共圆                                   |
+|                 AreParallel(<Line>,<Line>)；是否平行(<直线 1>,<直线 2>。                  |
+|           AreCongruent(<Object>,<Object>)；是否全等(<几何对象1>,<几何对象 2>)。           |
+|            AreEqual(<Object>,<Object>)；是否相等(<几何对象 1>,<几何对象 2>)。             |                        Equal                        |
+|                  IsTangent(<Line>,<Conic>)；是否相切(<直线>,<圆锥曲线>)                   |
+|                      Segment(<Point>,<Point>)；线段(<点 1>,<点 2>)。                      |                        Line                         |
+|                                  IntersectPath.相交路径                                   |
+|                         Slope(<Line>)；斜率(<直线, 射线, 线段>)。                         |
+|                           Centroid(<Polygon>)；形心(<多边形>)。                           |                   RegionCentroid                    |
+|         CircularArc(<Midpoint>,<Point A>,<Point B>)；圆弧(<圆心>,<点 1>,<点 2>)。         |
+|      CircularSector(<Midpoint>,<Point A>,<Point B>)；圆扇形(<圆心>,<点 1>,<点 2>)。       |
+|                        Circumference(Conic)；圆周长(<圆锥曲线>)。                         |                      ArcLength                      |
+|                        Polyline(<List of Points>)；折线(<点列>)。                         |                        Line                         |
+|                     Prove(<Boolean Expression>)；证明(<布尔表达式>)。                     |
+|               ProveDetails(<Boolean Expression>)；证明过程(<布尔表达式>)。                |
+|                       Line(<Point>,<Point>)；直线(<点 1>,<点 2>)。                        |                    InfiniteLine                     |
+|                        PerpendicularBisector(LineBisector).中垂线                         |                PerpendicularBisector                |
+|                                       Midpoint.中点                                       |                       无对应                        |
+|          Barycenter(<List of Points>,<List of Weights>)；重心(<点列>,<权重列表>)          | //MapThread[ConstantArray, #]&//Flatten[#,1]&//Mean |
+|                          Perimeter(<Polygon>)；周长(<多边形>)。                           |                      Perimeter                      |
+|                    ClosestPoint(<Path>,<Point>)；最近点(<路径>,<点>)。                    |                    RegionNearest                    |
+|                Reflect(<Object>,<Point>)；对称(<几何对象>,<对称中心点>)。                 |                 ReflectionTransform                 |
+|                  Translate(<Object>,<Vector>)；平移(<几何对象>,<向量>)。                  |                      Translate                      |
+|         Shear(<Object>,<Line>,<Ratio>)；切变(<几何对象>,<直线,射线,线段>,<比>)。          |                  ShearingTransform                  |
+|                   Stretch(<Object>,<Vector>)；伸缩(<几何对象>,<向量>)。                   |
+|                                   Dilate(Enlarge).位似                                    |
+|                                          Rotate                                           |                       Rotate                        |
