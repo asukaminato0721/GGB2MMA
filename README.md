@@ -186,107 +186,7 @@
 |       Logistic       |                           LogisticDistribution                           |
 | InverseFDistribution |                                                                          |
 
-## 2.12 列表
 
-|   GeoGebra    |                      Mathematica                       |
-| :-----------: | :----------------------------------------------------: |
-|    Flatten    |                        Flatten                         |
-|     Union     |                   Union RegionUnion                    |
-|    Insert     |                         Insert                         |
-|    Product    |                      Times@@list                       |
-|    Product    |             Block[{Plus=Times},Total@list]             |
-|    Product    |                        Product                         |
-|    Product    | // Transpose // # /. {a_, b_} :> a^b & // Times @@ # & |
-|    Product    |       // MapThread[#1^#2 &, #] & // Times @@ # &       |
-|     Join      |                          Join                          |
-|    Unique     |                         Union                          |
-| Intersection  |                      Intersection                      |
-|    Reverse    |                        Reverse                         |
-|   Frequency   |   // Tally // (SortBy[#, First] &) // #[[;; , -1]] &   |
-|    Remove     |                       Complement                       |
-|     Sort      |                          Sort                          |
-| RandomElement |                      RandomChoice                      |
-|    IndexOf    |                     FirstPosition                      |
-|     Take      |                          Take                          |
-|     Take      |                       StringTake                       |
-|   Sequence    |                         Table                          |
-|   Sequence    |                         Range                          |
-|      Zip      |     Map[f,list]         (\*区别是 mma 有纯函数 \*)     |
-|    Element    |                          [[]]                          |
-|    Append     |                         Append                         |
-|     Last      |                          Last                          |
-|     First     |                         First                          |
-
-## 2.13 Logical.逻辑
-
-
-<center>
-
-|  GeoGebra  | Mathematica  |
-| :--------: | :----------: |
-|     If     |      If      |
-| IsInteger  |   IntegerQ   |
-| IsDefined  |  Definition  |
-| IsInRegion | RegionMember |
-|  CountIf   |    Count     |
-|   KeepIf   |    Select    |
-
-## 2.14 Statistics.统计
-
-|    GeoGebra    |                                       Mathematica                                        |
-| :------------: | :--------------------------------------------------------------------------------------: |
-|      Mad       |                                      MeanDeviation                                       |
-|      Mean      |                                           Mean                                           |
-|    SigmaXX     | list//#[[;;,1]]&//#^2&//Total    或  list//#[[;;,1]]&// #.#& 或  list//First/@#& // #.#& |
-|    SigmaXY     |                              list// Times @@@ # & // Total                               |
-|    SigmaXY     |                                        list//#.#&                                        |
-|    SigmaYY     |                                  list//Last/@#& // #.#&                                  |
-|    Spearma     |                                       SpearmanRho                                        |
-|  Stdev.Sstdev  |                                   list//Variance//Sqrt                                   |
-| Stdevp.Stdevp  |                                    StandardDeviation                                     |
-|      Sxx       |                          list// (#.# - (Total@# )^2)/Length@# &                          |
-|      Sxx       |                    list// First/@#&//(#.# - (Total@# )^2/Length@#) &                     |
-|      Sxy       |     list// Total@(Times @@@ #) - (Total@(First /@ #))*(Total@(Last /@ #))/Length@# &     |
-|      Sxy       |             list// #1.#2 - (Total@#1*Total@#2)/Length@# &[#[[1]], #[[2]]] &              |
-|      Syy       |                   list// Last /@ # & // (#.# - (Total@#)^2/Length@#) &                   |
-|     TTest      |                                          TTest                                           |
-|   Percentile   |                                         Quantile                                         |
-|       SD       |                                    StandardDeviation                                     |
-|   ZMeanTest    |                            ZTest     (\*ZTest 系列不清楚 \*)                             |
-|       Q1       |                           Quartiles[{1, 3, 4, 2, 5, 6}]//First                           |
-|       Q3       |                           Quartiles[{1, 3, 4, 2, 5, 6}]//Last                            |
-|  HarmonicMean  |                                       HarmonicMean                                       |
-|     FitLog     |       NonlinearModelFit[{{E, 1}, {E^2, 4}}, {a Log[x] + b}, {a, b},   x] // Normal       |
-|    FitPoly     |            Fit[{{-1, -1}, {0, 1}, {1, 1}, {2, 5}}, x^Range[0, 3], x] // Chop             |
-|    Variance    |                                         Variance                                         |
-|     ANOVA      |                                          不清楚                                          |
-|      SDX       |  横坐标标准差     {{1,1},{2,2},{3,1},{3,3},{4,2},{3,-1}} //First/@#&//StandardDeviation  |
-|     MeanX      |                                  list//First/@#&//Mean                                   |
-| GeometricMean  |                                      GeometricMean                                       |
-| RootMeanSquare |                                      RootMeanSquare                                      |
-| ChiSquaredTest |                                   PearsonChiSquareTest                                   |
-|    RSquare     |                                          不清楚                                          |
-|  FitLogistic   |               NonlinearModelFit[list, {a/(1 + b E^(-c x))}, {a, b, c}, x]                |
-|     FitPow     |                       NonlinearModelFit[list, {a x^b}, {a, b}, x]                        |
-|      Fit       |                                           Fit                                            |
-|    FitLineX    |                                    Fit[list,{1,x},x]                                     |
-|    FitLineY    |                                          不清楚                                          |
-|  TTestPaired   |                                       PairedTTest                                        |
-|   FitGrowth    |                     NonlinearModelFit[list, {a b ^( x)}, {a, b}, x]                      |
-|    Shuffle     |                                       RandomSample                                       |
-|   Covariance   |                                        Covariance                                        |
-|     Sample     |                                       RandomSample                                       |
-|  FitImplicit   |                                   拟合隐函数,没想出来                                    |
-|     FitSin     |                NonlinearModelFit[list, {a+ b Sin[c x+d]}, {a, b,c,d}, x]                 |
-|     FitExp     |                       NonlinearModelFit[list, {E ^(a x)}, {a}, x]                        |
-|     Median     |                                          Median                                          |
-|      Mode      |                                        Commonest                                         |
-|      Sum       |                                          Total                                           |
-|      Sum       |                                        StringJoin                                        |
-|      SDY       |  纵坐标标准差     {{1,1},{2,2},{3,1},{3,3},{4,2},{3,-1}} //Last/@#&//StandardDeviation   |
-|     MeanY      |                                   list//Last/@#&//Mean                                   |
-
-</center>
 
 ## 2.7 Function.函数与微积分
 
@@ -423,3 +323,192 @@
 |                   Stretch(<Object>,<Vector>)；伸缩(<几何对象>,<向量>)。                   |
 |                                   Dilate(Enlarge).位似                                    |
 |                                          Rotate                                           |                       Rotate                        |
+
+## 2.10 ScriptingCommands.脚本指令
+
+|                                      GeoGebra                                      |  Mathematica  |
+| :--------------------------------------------------------------------------------: | :-----------: |
+|                         Button(<Caption>)；按钮("<标题>")                          |    Button     |
+|                        PlaySound(<URL>)；播放声音(<网址>)。                        |     Play      |
+|                        PlaySound(<URL>)；播放声音(<网址>)。                        |     Sound     |
+|                                ExportImage.导出图片                                |    Export     |
+|                     ZoomIn(<Scale Factor>)；放大(<缩放因子>)。                     | Ctrl+鼠标滚轮 |
+|                                   SetValue.赋值                                    |      Set      |
+|                                  Checkbox.复选框                                   |   Checkbox    |
+|                  CopyFreeObject(<Object>)；复制自由对象(<对象>)。                  |
+|     AttachCopyToView(<Object>,<View 0,1,2>)；附加副本(<对象>,<视图 0 ,1,2>)。      |
+|                        UpdateConstruction( )；更新作图( )。                        |
+|                                 Turtle()；海龟()。                                 |
+|               TurtleBack(<Turtle>,<Distance>)；后退(<海龟>,<路程>)。               |
+|                                   Slider.滑动条                                    |    Slider     |
+|        ParseToFunction(<Function>,<String>)；解析为函数(<函数>,<字符串>)。         | ToExpression  |
+|                               ParseToNumber.解析为数                               | ToExpression  |
+|                                StartRecord.开始记录                                |
+|                        TurtleDown(<Turtle>)；落笔(<海龟>)。                        |
+|                         Pan(<x>,<y>)；平移视图(<x>,<y>)。                          |
+|                              StartAnimation.启动动画                               |
+|                               StartLogging.启动日志                                |
+|             TurtleForward(<Turtle>,<Distance>)；前进(<海龟>,<路程>)。              |
+|                          Delete(<Object>)；删除(<对象>)。                          |
+|                          SetBackgroundColor.设置背景颜色                           |
+|                               SetDecoration.设置标记                               |
+|                             SetLabelMode.设置标签模式                              |
+|            SetCaption(<Object>,<Text>)；设置标题(<对象>,"<标题文本>")。            |
+|                               SetPointSize.设置点径                                |   PointSize   |
+|                               SetPointStyle.设置点型                               |  PointLegend  |
+|                            SetDynamicColor.设置动态颜色                            |
+|      SetFixed(<Object>,<true,false>)；设置设置对象锁定(<对象>,<true,false>)。      |
+|                              SetPerspective.设置格局                               |
+|                                 SetTrace.设置跟踪                                  |
+|                          SetTooltipMode.设置工具提示模式                           |    Tooltip    |
+|                             SetActiveView.设置活动视图                             |
+|                            SetVisibleInView.设置可见性                             |
+|                           SetViewDirection.设置视图方向                            |   ViewPoint   |
+|                                SetFilling.设置填充                                 |
+|                                 SetLayer.设置图层                                  |
+| SetLevelOfDetail(<Surface>,<Level of Detail>)；设置细节级别(<曲面>,<细节级别 0,1>) |
+|                       SetConditionToShowObject.设置显示条件                        |
+|                             SetLineThickness.设置线径                              |   Thickness   |
+|                               SetLineStyle.设置线型                                |    Dashed     |
+|                                 SetColor.设置颜色                                  |
+|                       SetSeed(<Integer>)；设置种子(<整数>)。                       |  SeedRandom   |
+|                               SetSpinSpeed.设置转速                                |
+|                                 SetCoords.设置坐标                                 |
+|                            SetAxesRatio.设置坐标轴比例                             |  AspectRatio  |
+|                            InputBox（Textfield）.输入框                            |  InputField   |
+|                               DataFunction.数据函数                                |
+|                                    ZoomOut.缩小                                    |
+|                                   TurtleUp.抬笔                                    |
+|                                StopLogging.停止日志                                |
+|                                  GetTime.系统时间                                  | TimeObject[]  |
+|                                 ShowLabel.显示标签                                 |
+|                      ShowLayer(<Number>)；显示图层(<数值>)。                       |
+|                             ShowGrid( )；显示网格( )。                             |   GridLines   |
+|                                ShowAxes.显示坐标轴                                 |     Axes      |
+|                                 SelectObjects.选择                                 |
+|                                 HideLayer.隐藏图层                                 |
+|                                  TurtleRight.右转                                  |
+|                        ReadText(<Text>)；阅读文本("<文本>")                        |
+|                            RunClickScript.运行单击脚本                             |
+|                            RunUpdateScript.运行更新脚本                            |
+|                    Execute(<List of Texts>)；执行(<文本列表>)。                    | ToExpression  |
+|    CenterView(<Center Point>)；中心定位(<视图中心设置坐标(x,y) , 视图中心点>)。    |  AxesOrigin   |
+|                                    Repeat.重复                                     |
+|                                   Rename.重命名                                    |
+|                                  TurtleLeft.左转                                   |
+
+## 2.11 DiscreteMath.离散数学
+
+
+|                          GeoGebra                           |   Mathematica    |
+| :---------------------------------------------------------: | :--------------: |
+|            DelaunayTriangulation.Delaunay 三角网            |   DelaunayMesh   |
+|                     Voronoi.Voronoi 图                      |   VoronoiMesh    |
+|                TravelingSalesman.旅行商问题                 | FindShortestTour |
+|        ConvexHull(<List of Points>)；凸包(<点列>)。         |  ConvexHullMesh  |
+|                  ShortestDistance.最短距离                  | FindShortestPath |
+| MinimumSpanningTree(<List of Points>)；最小生成树(<点列>)。 | FindSpanningTree |
+
+
+
+## 2.12 列表
+
+|   GeoGebra    |                      Mathematica                       |
+| :-----------: | :----------------------------------------------------: |
+|    Flatten    |                        Flatten                         |
+|     Union     |                   Union RegionUnion                    |
+|    Insert     |                         Insert                         |
+|    Product    |                      Times@@list                       |
+|    Product    |             Block[{Plus=Times},Total@list]             |
+|    Product    |                        Product                         |
+|    Product    | // Transpose // # /. {a_, b_} :> a^b & // Times @@ # & |
+|    Product    |       // MapThread[#1^#2 &, #] & // Times @@ # &       |
+|     Join      |                          Join                          |
+|    Unique     |                         Union                          |
+| Intersection  |                      Intersection                      |
+|    Reverse    |                        Reverse                         |
+|   Frequency   |   // Tally // (SortBy[#, First] &) // #[[;; , -1]] &   |
+|    Remove     |                       Complement                       |
+|     Sort      |                          Sort                          |
+| RandomElement |                      RandomChoice                      |
+|    IndexOf    |                     FirstPosition                      |
+|     Take      |                          Take                          |
+|     Take      |                       StringTake                       |
+|   Sequence    |                         Table                          |
+|   Sequence    |                         Range                          |
+|      Zip      |     Map[f,list]         (\*区别是 mma 有纯函数 \*)     |
+|    Element    |                          [[]]                          |
+|    Append     |                         Append                         |
+|     Last      |                          Last                          |
+|     First     |                         First                          |
+
+## 2.13 Logical.逻辑
+
+
+<center>
+
+|  GeoGebra  | Mathematica  |
+| :--------: | :----------: |
+|     If     |      If      |
+| IsInteger  |   IntegerQ   |
+| IsDefined  |  Definition  |
+| IsInRegion | RegionMember |
+|  CountIf   |    Count     |
+|   KeepIf   |    Select    |
+
+## 2.14 Statistics.统计
+
+|    GeoGebra    |                                       Mathematica                                        |
+| :------------: | :--------------------------------------------------------------------------------------: |
+|      Mad       |                                      MeanDeviation                                       |
+|      Mean      |                                           Mean                                           |
+|    SigmaXX     | list//#[[;;,1]]&//#^2&//Total    或  list//#[[;;,1]]&// #.#& 或  list//First/@#& // #.#& |
+|    SigmaXY     |                              list// Times @@@ # & // Total                               |
+|    SigmaXY     |                                        list//#.#&                                        |
+|    SigmaYY     |                                  list//Last/@#& // #.#&                                  |
+|    Spearma     |                                       SpearmanRho                                        |
+|  Stdev.Sstdev  |                                   list//Variance//Sqrt                                   |
+| Stdevp.Stdevp  |                                    StandardDeviation                                     |
+|      Sxx       |                          list// (#.# - (Total@# )^2)/Length@# &                          |
+|      Sxx       |                    list// First/@#&//(#.# - (Total@# )^2/Length@#) &                     |
+|      Sxy       |     list// Total@(Times @@@ #) - (Total@(First /@ #))*(Total@(Last /@ #))/Length@# &     |
+|      Sxy       |             list// #1.#2 - (Total@#1*Total@#2)/Length@# &[#[[1]], #[[2]]] &              |
+|      Syy       |                   list// Last /@ # & // (#.# - (Total@#)^2/Length@#) &                   |
+|     TTest      |                                          TTest                                           |
+|   Percentile   |                                         Quantile                                         |
+|       SD       |                                    StandardDeviation                                     |
+|   ZMeanTest    |                            ZTest     (\*ZTest 系列不清楚 \*)                             |
+|       Q1       |                           Quartiles[{1, 3, 4, 2, 5, 6}]//First                           |
+|       Q3       |                           Quartiles[{1, 3, 4, 2, 5, 6}]//Last                            |
+|  HarmonicMean  |                                       HarmonicMean                                       |
+|     FitLog     |       NonlinearModelFit[{{E, 1}, {E^2, 4}}, {a Log[x] + b}, {a, b},   x] // Normal       |
+|    FitPoly     |            Fit[{{-1, -1}, {0, 1}, {1, 1}, {2, 5}}, x^Range[0, 3], x] // Chop             |
+|    Variance    |                                         Variance                                         |
+|     ANOVA      |                                          不清楚                                          |
+|      SDX       |  横坐标标准差     {{1,1},{2,2},{3,1},{3,3},{4,2},{3,-1}} //First/@#&//StandardDeviation  |
+|     MeanX      |                                  list//First/@#&//Mean                                   |
+| GeometricMean  |                                      GeometricMean                                       |
+| RootMeanSquare |                                      RootMeanSquare                                      |
+| ChiSquaredTest |                                   PearsonChiSquareTest                                   |
+|    RSquare     |                                          不清楚                                          |
+|  FitLogistic   |               NonlinearModelFit[list, {a/(1 + b E^(-c x))}, {a, b, c}, x]                |
+|     FitPow     |                       NonlinearModelFit[list, {a x^b}, {a, b}, x]                        |
+|      Fit       |                                           Fit                                            |
+|    FitLineX    |                                    Fit[list,{1,x},x]                                     |
+|    FitLineY    |                                          不清楚                                          |
+|  TTestPaired   |                                       PairedTTest                                        |
+|   FitGrowth    |                     NonlinearModelFit[list, {a b ^( x)}, {a, b}, x]                      |
+|    Shuffle     |                                       RandomSample                                       |
+|   Covariance   |                                        Covariance                                        |
+|     Sample     |                                       RandomSample                                       |
+|  FitImplicit   |                                   拟合隐函数,没想出来                                    |
+|     FitSin     |                NonlinearModelFit[list, {a+ b Sin[c x+d]}, {a, b,c,d}, x]                 |
+|     FitExp     |                       NonlinearModelFit[list, {E ^(a x)}, {a}, x]                        |
+|     Median     |                                          Median                                          |
+|      Mode      |                                        Commonest                                         |
+|      Sum       |                                          Total                                           |
+|      Sum       |                                        StringJoin                                        |
+|      SDY       |  纵坐标标准差     {{1,1},{2,2},{3,1},{3,3},{4,2},{3,-1}} //Last/@#&//StandardDeviation   |
+|     MeanY      |                                   list//Last/@#&//Mean                                   |
+
+</center>
