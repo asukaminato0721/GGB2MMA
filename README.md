@@ -607,19 +607,19 @@
 
 |                                      GeoGebra                                      |                       Mathematica                        |
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------: |
-|                      MixedNumber(<Number>)；带分数(<数值>)。                       |
-| GroebnerDegRevLex(<List of Polynomials>)；分次反字典序 Groebner 基(<多项式列表>)。 |                      GroebnerBasis                       |
-|   GroebnerLexDeg(<List of Polynomials>)；分次字典序 Groebner 基(<多项式列表>)。    |                      GroebnerBasis                       |
-|                        CSolve(<Equation>)；复数解(<方程>)。                        |                          Solve                           |
-|                     CSolutions(<Equation>)；复数解集(<方程>)。                     |                      Solve//Values                       |
-|                 CFactor(<Expression>)；复数域因式分解(<表达式>)。                  |                  Factor[Extension->All]                  |
-|               CIFactor(<Expression>)；复无理数域因式分解(<表达式>)。               |                  Factor[Extension->All]                  |
-|            SolveCubic(<Cubic Polynomial>)；解三次多项式(<三次多项式>)。            |                          Solve                           |
-|                     Numeric(<Expression>)；近似数(<表达式>)。                      |                            N                             |
-|                    Laplace(<Function>)；拉普拉斯变换(<函数>)。                     |                     LaplaceTransform                     |
-|                InverseLaplace(<Function>)；拉普拉斯逆变换(<函数>)。                |                 InverseLaplaceTransform                  |
-|   Substitute(<Expression>,<from>,<to>)；替换(<表达式>,<被替换对象>,<替换对象>)。   |                            /.                            |
-|  Eliminate(<List of Polynomials>,<List of Variables>)；消元(<多项式集>,<变量集>)   |                        Eliminate                         |
-|                      Rationalize(<Number>)；有理化(<数值>)。                       |                       Rationalize                        |
-|             ToExponential(<Complex Number>)；转换为指数形式(<复数>)。              | With[{n = Abs[1 + I], a = Arg[1 + I]}, Defer[n E^(I a)]] |
-|       GroebnerLex(<List of Polynomials>)；字典序 Groebner 基(<多项式列表>)。       |                      GroebnerBasis                       |
+|                      MixedNumber(\<Number>)；带分数(<数值>)。                       |
+| GroebnerDegRevLex(\<List of Polynomials>)；分次反字典序 Groebner 基(<多项式列表>)。 |                      GroebnerBasis                       |
+|   GroebnerLexDeg(\<List of Polynomials>)；分次字典序 Groebner 基(<多项式列表>)。    |                      GroebnerBasis                       |
+|                        CSolve(\<Equation>)；复数解(<方程>)。                        |                          Solve                           |
+|                     CSolutions(\<Equation>)；复数解集(<方程>)。                     |                      Solve//Values                       |
+|                 CFactor(\<Expression>)；复数域因式分解(<表达式>)。                  |                  Factor[Extension->All]                  |
+|               CIFactor(\<Expression>)；复无理数域因式分解(<表达式>)。               |                  Factor[Extension->All]                  |
+|            SolveCubic(\<Cubic Polynomial>)；解三次多项式(<三次多项式>)。            |                          Solve                           |
+|                     Numeric(\<Expression>)；近似数(<表达式>)。                      |                            N                             |
+|                    Laplace(\<Function>)；拉普拉斯变换(<函数>)。                     |                     LaplaceTransform                     |
+|                InverseLaplace(\<Function>)；拉普拉斯逆变换(<函数>)。                |                 InverseLaplaceTransform                  |
+|   Substitute(\<Expression>,\<from>,\<to>)；替换(<表达式>,<被替换对象>,<替换对象>)。   |                            /.                            |
+|  Eliminate(\<List of Polynomials>,\<List of Variables>)；消元(<多项式集>,<变量集>)   |                        Eliminate                         |
+|                      Rationalize(\<Number>)；有理化(<数值>)。                       |                       Rationalize                        |
+|             ToExponential(\<Complex Number>)；转换为指数形式(<复数>)。              | With[{n = Abs[1 + I], a = Arg[1 + I]}, Defer[n E^(I a)]] |
+|       GroebnerLex(\<List of Polynomials>)；字典序 Groebner 基(<多项式列表>)。       |                      GroebnerBasis                       |
